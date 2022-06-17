@@ -1,2 +1,13 @@
-<h1>Cars#index</h1>
-<p>Find me in app/views/cars/index.html.erb</p>
+<h1 class="text-center">Nos voitures</h1>
+
+<div class="card container w-50 text-center">
+  <% @cars.each do |car| %>
+    <%= link_to car_path(car) do  %>
+      <p>Marque: <%= car.brand.capitalize %></p>
+      <p>Modèle: <%= car.model %></p>
+      <p>Année: <%= car.year_of_production %></p>
+      <p>Adresse: <%= car.address %></p>
+      <p>Prix: <%= car.price_per_day %> par jours</p>
+    <% end %>
+  <% end %>
+</div>

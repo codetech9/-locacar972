@@ -1,2 +1,8 @@
-<h1>Cars#show</h1>
-<p>Find me in app/views/cars/show.html.erb</p>
+<h1 class="text-center">Voiture</h1>
+<div class="card container text-center">
+    <p>Marque: <%= @car.brand.capitalize %></p>
+    <p>Modèle: <%= @car.model %></p>
+    <p>Année: <%= @car.year_of_production %></p>
+    <p>Adresse: <%= @car.address %></p>
+    <p>Prix: <%= @car.price_per_day %> par jours</p>
+</div>
