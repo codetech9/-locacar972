@@ -6,3 +6,24 @@
     <p>Adresse: <%= @car.address %></p>
     <p>Prix: <%= @car.price_per_day %> par jours</p>
 </div>
+
+ <div class="container">
+  <div class="form-wrapper">
+    <h2>Book a Car</h2>
+    <%= simple_form_for([@car, @booking]) do |f| %>
+      <%= f.input :starts_at, label: false, as: :date %>
+      <%= f.input :ends_at, label: false,as: :date %>
+      <div class="mx-auto text-center mt-2">
+        <%= f.submit "Book", method: :post, class: "btn btn-primary text-center" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="mx-auto col-1 mt-2">
+  <%= link_to "Nos voitures", cars_path, class:"btn btn-primary "%>
+</div>
+
+<div id="booking-form-div"
+     data-bookings="<%= @bookings_dates.to_json %>">
+</div>
