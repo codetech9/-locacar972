@@ -1,14 +1,10 @@
 <h1 class="text-center">Nos voitures</h1>
 
-<div class="d-flex justify-content-between flex-wrap text-center h-100 w-100" style="text-decoration:none">
+<div class="d-flex justify-content-between flex-wrap text-center text-decoration-none" style="text-decoration:none">
   <% @cars.each do |car| %>
     <%= link_to car_path(car) do  %>
-      <div class="card"style="width: 18rem; margin: 8px;">
-        <p>Marque: <%= car.brand.capitalize %></p>
-        <p>Modèle: <%= car.model %></p>
-        <p>Année: <%= car.year_of_production %></p>
-        <p>Adresse: <%= car.address %></p>
-        <p>Prix: <%= car.price_per_day %>€/jrs</p>
+      <div class="card text-decoration-none"style="width: 18rem; margin: 8px;">
+        <p class="text-decoration-none"><%= car.brand.capitalize %> <%= car.model %></p>
       </div>
     <% end %>
   <% end %>
